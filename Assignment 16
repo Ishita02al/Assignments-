@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int arr[100], even[100], odd[100];
+    int even_count = 0, odd_count = 0;
+
+    // Input: Number of elements
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    // Input: List of integers
+    printf("Enter integers: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Logic: Separate even and odd numbers
+    for (i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0) {
+            even[even_count++] = arr[i];
+        } else {
+            odd[odd_count++] = arr[i];
+        }
+    }
+
+    // Output: Even numbers
+    printf("Even numbers are: ");
+    for (i = 0; i < even_count; i++) {
+        printf("%d ", even[i]);
+    }
+    printf("\n");
+
+    // Output: Odd numbers
+    printf("Odd numbers are: ");
+    for (i = 0; i < odd_count; i++) {
+        printf("%d ", odd[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
