@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <conio.h>
+#define MAX 10
+[span_1](start_span)//Function to read a matrix from user input[span_1]
+(end_span)
+void readMatrix(int matrix[MAX][MAX], int rows, int cols)
+printf("Enter the elements of the matrix(%d x %d):\n", rows, cols);
+for(int i=0; i < rows; i++)
+for(intj=0;j< cols;j++) f scanf("%d", &matrix[i]l);
+[span_2](start_span)//Function to display the matrix[span_2]
+(end_span)
+void displayMatrix(int matrix[MAX][MAX], int rows, int cols)
+printf("The matrix is:\n");
+for(inti =0; i s< rows; i+t) for(int j=0; js< cols; j++) f
