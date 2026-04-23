@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int n, i;
+
+    // Seed the random number generator with current time
+    srand(time(0));
+
+    printf("Enter how many random numbers you want: ");
+    if (scanf("%d", &n) != 1) {
+        printf("Invalid input.\n");
+        return 1;
+    }
+
+    printf("Pseudo Random Numbers:\n");
+    for (i = 0; i < n; i++) {
+        // rand() generates a pseudo-random number
+        printf("%d\n", rand());
+    }
+
+    return 0;
+}
+
