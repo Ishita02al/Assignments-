@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+// Function to find the Greatest Common Divisor (GCD) using Euclidean Algorithm
+int findGCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// Function to find the Smallest Common Divisor (SCD) > 1
+int findSCD(int a, int b) {
+    int min = (a < b) ? a : b;
+    for (int i = 2; i <= min; i++) {
+        if (a % i == 0 && b % i == 0) {
+            return i;
+        }
+    }
+    return -1; // Indicates no common divisor other than 1
+}
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &num1, &num2);
+
+    if (num1 <= 0 || num2 <= 0) {
+        printf("Please enter positive integers only.\n");
+        return 1;
+    }
+
+    // Task a: Smallest Common Divisor
+    int scd = findSCD(num1, num2);
+    if (scd != -1) {
+        printf("a) Smallest common divisor (other than 1): %d\n", scd);
+    } else {
+        printf("a) No common divisor other than 1 exists.\n");
+    }
+
+    // Task b: Greatest Common Divisor
+    int gcd = findGCD(num1, num2);
+    printf("b) Greatest Common Divisor (GCD): %d\n", gcd);
+
+    return 0;
+}
+
